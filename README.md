@@ -1,4 +1,4 @@
-# Hungry-Little-Code
+# hungry-little-code
 The first project of my own
 
 It started off with copying some code to work out the largest number from a given list. It made sense.
