@@ -1,0 +1,33 @@
+list = []
+count_bad = 0   # how many bad inputs
+
+print('Type a number or "all gone" when finished.')
+
+while True:
+    food = input('Feed me: ')
+    if food == 'all gone':    # how to get out of the loop
+        break
+    elif len(food) < 1:      # if there is no input (double return key)
+        print('Oops, you missed my mouth.')
+    elif food == ' ':       # if the input is the space key
+        print('Oops, that was just some space.')
+    else:
+        try:
+            list.append(float(food))        # adds to list
+        except:
+            count_bad += 1
+            print('Naughty naughty, you tried to poison me. '
+                  'Numbers of the numerical kind only please. Try again.')
+
+print()
+print('Everything chewed. Yum Yum.')
+if len(list) == 1:
+    print('There was only 1 nice number. :-( ')
+elif count_bad == 1:
+    print('There were', len(list), "tasty numbers and a yukky thing I didn't eat.")
+else:
+    print('There were', len(list), 'tasty numbers, and', count_bad, "yukky things that I didn't eat.")
+
+print('The largest number I ate was', max(list), ', the smallest number was', min(list), ', and '
+                        'if I add up all the tasty numbers I ate it comes to', sum(list),
+                                    'with an average of', sum(list) / len(list), '.')
